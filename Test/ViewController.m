@@ -9,10 +9,15 @@
 #import "ViewController.h"
 #import "Test.h"
 #import "Xtrace.h"
+#import "GHIssue.h"
+#import "HBUser.h"
+#import <YYModel.h>
 
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *testLabel;
+
+@property (nonatomic, strong) NSDictionary *dictionary;
 
 @end
 
@@ -22,50 +27,29 @@
 {
     [super viewDidLoad];
     
-    [Xtrace showCaller:YES];
-    [Xtrace describeValues:YES];
-    [Xtrace setDelegate:self];
-    [Xtrace forClass:[UILabel class] before:@selector(setText:) callbackBlock:^(UILabel *label){
-        NSLog(@"before text: %@", label.text);
-    }];
-    [Xtrace forClass:[UILabel class] after:@selector(setText:) callbackBlock:^(UILabel *label){
-        NSLog(@"after text: %@", label.text);
-    }];
-    
-    
-    [self.testLabel xtrace];
-    
-    self.testLabel.text = @"潇洒";
+    NSDictionary *userDict = @{@"name": @"李俊峰",
+                               @"gender": @"男",};
+    self.dictionary = @{@"url": @"www.baidu.com",
+                        @"title": @"百度",
+                        @"user": userDict};
 }
 
 - (IBAction)tapButton:(id)sender
 {
-    @try {
-        Test *test = [Test new];
-        
-        NSDictionary *dict = @{
-                               @"name":@"jfl",
-                               @"age":@"12",
-                               };
-        [test setValuesForKeysWithDictionary:dict];
-        
-        NSString *address = @"国风美域";
-        NSError *error = nil;
-        if ([test validateValue:&address forKey:@"address" error:&error]) {
-            [test setValue:address forKey:@"address"];
-        }
-        
-        NSString *phoneNum = @"15558069552";
-        if ([test validateValue:&phoneNum forKey:@"phoneNum" error:&error]) {
-            [test setValue:phoneNum forKey:@"phoneNum"];
-        }
-        
-        NSLog(@"test: %@", test);
-    } @catch (NSException *exception) {
-        NSLog(@"exception: %@", exception);
-    } @finally {
-        NSLog(@"error");
-    }
+//    GHIssue *issue = [GHIssue yy_modelWithDictionary:self.dictionary];
+    GHIssue *issue = [GHIssue new];
+    [issue yy_modelSetWithJSON:self.dictionary];
+    NSLog(@"issue: %@", issue);
+    
+//    GHUser *user = [GHUser new];
+//    user.name = @"jfl";
+//    user.gender = @"male";
+//    user.age = 18;
+//    user.success = 0;
+//    
+//    NSDictionary *userDict = [user yy_modelToJSONObject];
+//    HBUser *otherUser = [HBUser yy_modelWithDictionary:userDict];
+//    NSLog(@"otherUser: %@", otherUser);
 }
 
 @end
