@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+
 @interface GHUser : NSObject
 
 @property (nonatomic, copy) NSString *name;

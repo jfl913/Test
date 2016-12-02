@@ -27,18 +27,21 @@
 {
     [super viewDidLoad];
     
+//    [GHIssue xtrace];
+//    [YYClassInfo xtrace];
+    
     NSDictionary *userDict = @{@"name": @"李俊峰",
-                               @"gender": @"男",};
+                               @"gender": @"男",
+                               };
     self.dictionary = @{@"url": @"www.baidu.com",
                         @"title": @"百度",
-                        @"user": userDict};
+                        @"user": userDict,
+                        };
 }
 
 - (IBAction)tapButton:(id)sender
 {
-//    GHIssue *issue = [GHIssue yy_modelWithDictionary:self.dictionary];
-    GHIssue *issue = [GHIssue new];
-    [issue yy_modelSetWithJSON:self.dictionary];
+    GHIssue *issue = [GHIssue yy_modelWithJSON:self.dictionary];
     NSLog(@"issue: %@", issue);
     
 //    GHUser *user = [GHUser new];

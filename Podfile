@@ -6,6 +6,6 @@ target 'Test' do
   # use_frameworks!
 
   # Pods for Test
-  pod 'YYModel'
+  pod 'YYModel', :path => '/Users/jfl/Documents/注解第三方库/YYModel'
 
 end

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1D805830F291DC6CF45855CC /* libPods-Test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 204570C17198DD64629325C6 /* libPods-Test.a */; };
 		854FEEAE1DE5443F00080723 /* Xtrace.mm in Sources */ = {isa = PBXBuildFile; fileRef = 854FEEAD1DE5443F00080723 /* Xtrace.mm */; };
+		85536DB41DEC13B600CCDA5C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 85536DB31DEC13B600CCDA5C /* User.m */; };
 		855C116E1DE6D5580089CFEA /* GHIssue.m in Sources */ = {isa = PBXBuildFile; fileRef = 855C11691DE6D5580089CFEA /* GHIssue.m */; };
 		855C116F1DE6D5580089CFEA /* GHUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 855C116B1DE6D5580089CFEA /* GHUser.m */; };
 		855C11701DE6D5580089CFEA /* HBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 855C116D1DE6D5580089CFEA /* HBUser.m */; };
@@ -26,6 +27,8 @@
 		73C39A149519730FC492CE8E /* Pods-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.release.xcconfig"; path = "Pods/Target Support Files/Pods-Test/Pods-Test.release.xcconfig"; sourceTree = "<group>"; };
 		854FEEAC1DE5443F00080723 /* Xtrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Xtrace.h; sourceTree = "<group>"; };
 		854FEEAD1DE5443F00080723 /* Xtrace.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Xtrace.mm; sourceTree = "<group>"; };
+		85536DB21DEC13B600CCDA5C /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		85536DB31DEC13B600CCDA5C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		855C11681DE6D5580089CFEA /* GHIssue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHIssue.h; sourceTree = "<group>"; };
 		855C11691DE6D5580089CFEA /* GHIssue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHIssue.m; sourceTree = "<group>"; };
 		855C116A1DE6D5580089CFEA /* GHUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUser.h; sourceTree = "<group>"; };
@@ -85,6 +88,8 @@
 				855C116B1DE6D5580089CFEA /* GHUser.m */,
 				855C116C1DE6D5580089CFEA /* HBUser.h */,
 				855C116D1DE6D5580089CFEA /* HBUser.m */,
+				85536DB21DEC13B600CCDA5C /* User.h */,
+				85536DB31DEC13B600CCDA5C /* User.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 			files = (
 				855C116E1DE6D5580089CFEA /* GHIssue.m in Sources */,
 				8562E1521C2D20D90001F0A9 /* ViewController.m in Sources */,
+				85536DB41DEC13B600CCDA5C /* User.m in Sources */,
 				85EEFC031DDD8899003792FA /* Test.m in Sources */,
 				854FEEAE1DE5443F00080723 /* Xtrace.mm in Sources */,
 				855C11701DE6D5580089CFEA /* HBUser.m in Sources */,
