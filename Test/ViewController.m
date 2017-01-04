@@ -22,49 +22,85 @@
 {
     [super viewDidLoad];
     
-    [Xtrace showCaller:YES];
-    [Xtrace describeValues:YES];
-    [Xtrace setDelegate:self];
-    [Xtrace forClass:[UILabel class] before:@selector(setText:) callbackBlock:^(UILabel *label){
-        NSLog(@"before text: %@", label.text);
-    }];
-    [Xtrace forClass:[UILabel class] after:@selector(setText:) callbackBlock:^(UILabel *label){
-        NSLog(@"after text: %@", label.text);
-    }];
-    
-    
-    [self.testLabel xtrace];
-    
     self.testLabel.text = @"潇洒";
 }
 
 - (IBAction)tapButton:(id)sender
 {
-    @try {
-        Test *test = [Test new];
+    dispatch_queue_t queue = dispatch_queue_create("com.gcd.barrier", DISPATCH_QUEUE_CONCURRENT);
+    
+    __block NSInteger i = 0;
+    
+    {
+        dispatch_async(queue, ^{
+            NSLog(@"Index Before: %ld", (long)i);
+            i++;
+        });
         
-        NSDictionary *dict = @{
-                               @"name":@"jfl",
-                               @"age":@"12",
-                               };
-        [test setValuesForKeysWithDictionary:dict];
+        dispatch_async(queue, ^{
+            NSLog(@"Index Before: %ld", (long)i);
+            i++;
+        });
         
-        NSString *address = @"国风美域";
-        NSError *error = nil;
-        if ([test validateValue:&address forKey:@"address" error:&error]) {
-            [test setValue:address forKey:@"address"];
-        }
+        dispatch_async(queue, ^{
+            NSLog(@"Index Before: %ld", (long)i);
+            i++;
+        });
         
-        NSString *phoneNum = @"15558069552";
-        if ([test validateValue:&phoneNum forKey:@"phoneNum" error:&error]) {
-            [test setValue:phoneNum forKey:@"phoneNum"];
-        }
+        dispatch_async(queue, ^{
+            NSLog(@"Index Before: %ld", (long)i);
+            i++;
+        });
+
+    }
+    
+    {
+        dispatch_barrier_async(queue, ^{
+            NSLog(@"Index Middle: %ld", (long)i);
+            i++;
+        });
         
-        NSLog(@"test: %@", test);
-    } @catch (NSException *exception) {
-        NSLog(@"exception: %@", exception);
-    } @finally {
-        NSLog(@"error");
+        dispatch_barrier_async(queue, ^{
+            NSLog(@"Index Middle: %ld", (long)i);
+            i++;
+        });
+        
+        dispatch_barrier_async(queue, ^{
+            NSLog(@"Index Middle: %ld", (long)i);
+            i++;
+        });
+        
+        dispatch_barrier_async(queue, ^{
+            NSLog(@"Index Middle: %ld", (long)i);
+            i++;
+        });
+        
+        dispatch_barrier_async(queue, ^{
+            NSLog(@"Index Middle: %ld", (long)i);
+            i++;
+        });
+        
+        dispatch_barrier_async(queue, ^{
+            NSLog(@"Index Middle: %ld", (long)i);
+            i++;
+        });
+    }
+    
+    {
+        dispatch_async(queue, ^{
+            NSLog(@"Index After: %ld", (long)i);
+            i++;
+        });
+        
+        dispatch_async(queue, ^{
+            NSLog(@"Index After: %ld", (long)i);
+            i++;
+        });
+        
+        dispatch_async(queue, ^{
+            NSLog(@"Index After: %ld", (long)i);
+            i++;
+        });
     }
 }
 
