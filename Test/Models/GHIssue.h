@@ -15,4 +15,6 @@
 @property (nonatomic, strong) GHUser *user;
 @property (nonatomic, copy) NSString *name;
 
+-(NSString *)nameWithInstance:(id)instance;
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "GHIssue.h"
+#import <objc/runtime.h>
 
 @class GHUser;
 
@@ -18,5 +19,6 @@
              @"name": @"user.name",
              };
 }
+
 
 @end
