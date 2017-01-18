@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		1D805830F291DC6CF45855CC /* libPods-Test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 204570C17198DD64629325C6 /* libPods-Test.a */; };
+		8530330A1E2F17F300851286 /* MethodType.m in Sources */ = {isa = PBXBuildFile; fileRef = 853033091E2F17F300851286 /* MethodType.m */; };
 		854FEEAE1DE5443F00080723 /* Xtrace.mm in Sources */ = {isa = PBXBuildFile; fileRef = 854FEEAD1DE5443F00080723 /* Xtrace.mm */; };
 		85536DB41DEC13B600CCDA5C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 85536DB31DEC13B600CCDA5C /* User.m */; };
 		855C116E1DE6D5580089CFEA /* GHIssue.m in Sources */ = {isa = PBXBuildFile; fileRef = 855C11691DE6D5580089CFEA /* GHIssue.m */; };
 		855C116F1DE6D5580089CFEA /* GHUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 855C116B1DE6D5580089CFEA /* GHUser.m */; };
 		855C11701DE6D5580089CFEA /* HBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 855C116D1DE6D5580089CFEA /* HBUser.m */; };
+		856197B81E2DC1FB004F4E24 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 856197B71E2DC1FB004F4E24 /* Student.m */; };
 		8562E14C1C2D20D90001F0A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8562E14B1C2D20D90001F0A9 /* main.m */; };
 		8562E14F1C2D20D90001F0A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8562E14E1C2D20D90001F0A9 /* AppDelegate.m */; };
 		8562E1521C2D20D90001F0A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8562E1511C2D20D90001F0A9 /* ViewController.m */; };
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		204570C17198DD64629325C6 /* libPods-Test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73C39A149519730FC492CE8E /* Pods-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.release.xcconfig"; path = "Pods/Target Support Files/Pods-Test/Pods-Test.release.xcconfig"; sourceTree = "<group>"; };
+		853033081E2F17F300851286 /* MethodType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MethodType.h; sourceTree = "<group>"; };
+		853033091E2F17F300851286 /* MethodType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodType.m; sourceTree = "<group>"; };
 		854FEEAC1DE5443F00080723 /* Xtrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Xtrace.h; sourceTree = "<group>"; };
 		854FEEAD1DE5443F00080723 /* Xtrace.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Xtrace.mm; sourceTree = "<group>"; };
 		85536DB21DEC13B600CCDA5C /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -35,6 +39,8 @@
 		855C116B1DE6D5580089CFEA /* GHUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUser.m; sourceTree = "<group>"; };
 		855C116C1DE6D5580089CFEA /* HBUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBUser.h; sourceTree = "<group>"; };
 		855C116D1DE6D5580089CFEA /* HBUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBUser.m; sourceTree = "<group>"; };
+		856197B61E2DC1FB004F4E24 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		856197B71E2DC1FB004F4E24 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		8562E1471C2D20D90001F0A9 /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8562E14B1C2D20D90001F0A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8562E14D1C2D20D90001F0A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -129,6 +135,10 @@
 				8562E1581C2D20D90001F0A9 /* LaunchScreen.storyboard */,
 				8562E15B1C2D20D90001F0A9 /* Info.plist */,
 				8562E14A1C2D20D90001F0A9 /* Supporting Files */,
+				856197B61E2DC1FB004F4E24 /* Student.h */,
+				856197B71E2DC1FB004F4E24 /* Student.m */,
+				853033081E2F17F300851286 /* MethodType.h */,
+				853033091E2F17F300851286 /* MethodType.m */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -267,9 +277,11 @@
 				8562E1521C2D20D90001F0A9 /* ViewController.m in Sources */,
 				85536DB41DEC13B600CCDA5C /* User.m in Sources */,
 				85EEFC031DDD8899003792FA /* Test.m in Sources */,
+				8530330A1E2F17F300851286 /* MethodType.m in Sources */,
 				854FEEAE1DE5443F00080723 /* Xtrace.mm in Sources */,
 				855C11701DE6D5580089CFEA /* HBUser.m in Sources */,
 				8562E14F1C2D20D90001F0A9 /* AppDelegate.m in Sources */,
+				856197B81E2DC1FB004F4E24 /* Student.m in Sources */,
 				8562E14C1C2D20D90001F0A9 /* main.m in Sources */,
 				855C116F1DE6D5580089CFEA /* GHUser.m in Sources */,
 			);

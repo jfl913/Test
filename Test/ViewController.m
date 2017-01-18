@@ -12,6 +12,8 @@
 #import "GHIssue.h"
 #import "HBUser.h"
 #import <YYModel.h>
+#import "Student.h"
+#import "MethodType.h"
 
 @interface ViewController ()
 
@@ -56,8 +58,18 @@
 //    HBUser *otherUser = [HBUser yy_modelWithDictionary:userDict];
 //    NSLog(@"otherUser: %@", otherUser);
     
-    [self testMessage];
-    [self testIMP];
+//    [self testMessage];
+//    [self testIMP];
+    
+//    Student *student = [Student new];
+//    [Student learnClass:@"计算机"];
+//    [student goToSchool:@"河南农业大学"];
+    
+    MethodType *methodType = [MethodType new];
+    [methodType getMethods];
+    
+    char *SELType = @encode(SEL);
+    NSLog(@"SEL type: %s", SELType);
 }
 
 -(NSString *)nameWithInstance:(id)instance {
@@ -96,7 +108,7 @@
 
 - (void)testMethod:(BOOL)isTest
 {
-    BOOL test = isTest;
+//    BOOL test = isTest;
 }
 
 - (void)testMessage
