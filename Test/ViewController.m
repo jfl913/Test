@@ -22,50 +22,16 @@
 {
     [super viewDidLoad];
     
-    [Xtrace showCaller:YES];
-    [Xtrace describeValues:YES];
-    [Xtrace setDelegate:self];
-    [Xtrace forClass:[UILabel class] before:@selector(setText:) callbackBlock:^(UILabel *label){
-        NSLog(@"before text: %@", label.text);
-    }];
-    [Xtrace forClass:[UILabel class] after:@selector(setText:) callbackBlock:^(UILabel *label){
-        NSLog(@"after text: %@", label.text);
-    }];
-    
-    
-    [self.testLabel xtrace];
-    
     self.testLabel.text = @"潇洒";
 }
 
 - (IBAction)tapButton:(id)sender
 {
-    @try {
-        Test *test = [Test new];
-        
-        NSDictionary *dict = @{
-                               @"name":@"jfl",
-                               @"age":@"12",
-                               };
-        [test setValuesForKeysWithDictionary:dict];
-        
-        NSString *address = @"国风美域";
-        NSError *error = nil;
-        if ([test validateValue:&address forKey:@"address" error:&error]) {
-            [test setValue:address forKey:@"address"];
-        }
-        
-        NSString *phoneNum = @"15558069552";
-        if ([test validateValue:&phoneNum forKey:@"phoneNum" error:&error]) {
-            [test setValue:phoneNum forKey:@"phoneNum"];
-        }
-        
-        NSLog(@"test: %@", test);
-    } @catch (NSException *exception) {
-        NSLog(@"exception: %@", exception);
-    } @finally {
-        NSLog(@"error");
-    }
+    NSComparisonResult result1 = [@"A" compare:@"B"];
+    NSLog(@"A compare B : %ld", (long)result1);
+    
+    NSComparisonResult result2 = [@"2017-03-10" compare:@"2017-04-24"];
+    NSLog(@"2017-03-10 compare 2017-04-24 : %ld", (long)result2);
 }
 
 @end

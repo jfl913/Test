@@ -6,6 +6,6 @@ target 'Test' do
   # use_frameworks!
 
   # Pods for Test
-  pod 'YYText'
+  # pod 'YYText'
 
 end
