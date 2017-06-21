@@ -14,5 +14,6 @@
 @property (nonatomic, strong) NSNumber *age;
 @property (nonatomic, copy) NSString *address;
 @property (nonatomic, strong) NSNumber *phoneNum;
+@property (strong, nonatomic) NSString *testName;
 
 @end
