@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1D805830F291DC6CF45855CC /* libPods-Test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 204570C17198DD64629325C6 /* libPods-Test.a */; };
+		8514CC811EFBA50500677DCB /* AnotherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8514CC7F1EFBA50400677DCB /* AnotherViewController.m */; };
+		8514CC821EFBA50500677DCB /* AnotherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8514CC801EFBA50400677DCB /* AnotherViewController.xib */; };
+		8514CC8B1EFBBBA400677DCB /* BlocksKitTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8514CC891EFBBBA400677DCB /* BlocksKitTimerViewController.m */; };
+		8514CC8C1EFBBBA400677DCB /* BlocksKitTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8514CC8A1EFBBBA400677DCB /* BlocksKitTimerViewController.xib */; };
 		8562E14C1C2D20D90001F0A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8562E14B1C2D20D90001F0A9 /* main.m */; };
 		8562E14F1C2D20D90001F0A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8562E14E1C2D20D90001F0A9 /* AppDelegate.m */; };
 		8562E1521C2D20D90001F0A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8562E1511C2D20D90001F0A9 /* ViewController.m */; };
@@ -20,6 +24,12 @@
 /* Begin PBXFileReference section */
 		204570C17198DD64629325C6 /* libPods-Test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73C39A149519730FC492CE8E /* Pods-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.release.xcconfig"; path = "Pods/Target Support Files/Pods-Test/Pods-Test.release.xcconfig"; sourceTree = "<group>"; };
+		8514CC7E1EFBA50400677DCB /* AnotherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnotherViewController.h; sourceTree = "<group>"; };
+		8514CC7F1EFBA50400677DCB /* AnotherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnotherViewController.m; sourceTree = "<group>"; };
+		8514CC801EFBA50400677DCB /* AnotherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnotherViewController.xib; sourceTree = "<group>"; };
+		8514CC881EFBBBA400677DCB /* BlocksKitTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlocksKitTimerViewController.h; sourceTree = "<group>"; };
+		8514CC891EFBBBA400677DCB /* BlocksKitTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlocksKitTimerViewController.m; sourceTree = "<group>"; };
+		8514CC8A1EFBBBA400677DCB /* BlocksKitTimerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlocksKitTimerViewController.xib; sourceTree = "<group>"; };
 		8562E1471C2D20D90001F0A9 /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8562E14B1C2D20D90001F0A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8562E14D1C2D20D90001F0A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -89,6 +99,12 @@
 				8562E14E1C2D20D90001F0A9 /* AppDelegate.m */,
 				8562E1501C2D20D90001F0A9 /* ViewController.h */,
 				8562E1511C2D20D90001F0A9 /* ViewController.m */,
+				8514CC7E1EFBA50400677DCB /* AnotherViewController.h */,
+				8514CC7F1EFBA50400677DCB /* AnotherViewController.m */,
+				8514CC801EFBA50400677DCB /* AnotherViewController.xib */,
+				8514CC881EFBBBA400677DCB /* BlocksKitTimerViewController.h */,
+				8514CC891EFBBBA400677DCB /* BlocksKitTimerViewController.m */,
+				8514CC8A1EFBBBA400677DCB /* BlocksKitTimerViewController.xib */,
 				85EEFC011DDD8899003792FA /* Test.h */,
 				85EEFC021DDD8899003792FA /* Test.m */,
 				8562E1531C2D20D90001F0A9 /* Main.storyboard */,
@@ -171,6 +187,8 @@
 			files = (
 				8562E15A1C2D20D90001F0A9 /* LaunchScreen.storyboard in Resources */,
 				8562E1571C2D20D90001F0A9 /* Assets.xcassets in Resources */,
+				8514CC821EFBA50500677DCB /* AnotherViewController.xib in Resources */,
+				8514CC8C1EFBBBA400677DCB /* BlocksKitTimerViewController.xib in Resources */,
 				8562E1551C2D20D90001F0A9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,9 +249,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8562E1521C2D20D90001F0A9 /* ViewController.m in Sources */,
+				8514CC811EFBA50500677DCB /* AnotherViewController.m in Sources */,
 				85EEFC031DDD8899003792FA /* Test.m in Sources */,
 				8562E14F1C2D20D90001F0A9 /* AppDelegate.m in Sources */,
 				8562E14C1C2D20D90001F0A9 /* main.m in Sources */,
+				8514CC8B1EFBBBA400677DCB /* BlocksKitTimerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

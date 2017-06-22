@@ -7,7 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "Test.h"
+#import "AnotherViewController.h"
+#import "BlocksKitTimerViewController.h"
+#import <BlocksKit.h>
 
 @interface ViewController ()
 
@@ -23,7 +25,13 @@
 
 - (IBAction)tapButton:(id)sender
 {
-    
+    AnotherViewController *anotherVC= [AnotherViewController new];
+    [self.navigationController pushViewController:anotherVC animated:YES];
+}
+
+- (IBAction)tapBlocksKitNSTimerButton:(id)sender {
+    BlocksKitTimerViewController *blocksKitTimerVC = [BlocksKitTimerViewController new];
+    [self.navigationController pushViewController:blocksKitTimerVC animated:YES];
 }
 
 @end

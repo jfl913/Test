@@ -7,5 +7,6 @@ target 'Test' do
 
   # Pods for Test
   # pod 'YYText'
+  pod 'BlocksKit'
 
 end
