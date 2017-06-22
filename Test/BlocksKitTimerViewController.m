@@ -25,6 +25,9 @@
 - (IBAction)startTimer:(id)sender {
     [self stopTimer:nil];
     // 必须要用weakSelf要不然会导致循环引用
+    // The user info for the timer. The timer maintains a strong reference to this object until it (the timer) is invalidated. This parameter may be nil.
+    // BlocksKit的封装是把block赋值给userInfo，
+    // 所以self持有timer，timer持有block，在block里用到self时，就该使用weakSelf，避免循环引用
     __weak typeof(self) weakSelf = self;
     self.timer = [NSTimer bk_scheduledTimerWithTimeInterval:2
                                                       block:^(NSTimer *timer) {
