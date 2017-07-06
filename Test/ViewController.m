@@ -60,6 +60,7 @@
 }
 
 - (void)share:(NSString *)shareString {
+    NSArray *argumentArray = [JSContext currentArguments];
     NSLog(@"share: %@", shareString);
     // 回调js的方法shareCallback
     JSValue *shareCallback = self.jsContext[@"shareCallback"];
