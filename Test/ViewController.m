@@ -61,6 +61,21 @@
 
 - (void)share:(NSString *)shareString {
     NSArray *argumentArray = [JSContext currentArguments];
+    NSLog(@"JSContext currentArguments: %@",argumentArray);
+    
+    JSContext *jsContext = [JSContext currentContext];
+    NSLog(@"JSContext currentContext: %@", jsContext);
+    
+    JSValue *callee = [JSContext currentCallee];
+    NSLog(@"JSContext currentCallee: %@", callee);
+    
+    JSValue *currentThis = [JSContext currentThis];
+    NSLog(@"JSContext currentThis: %@", currentThis);
+    
+    if (jsContext == self.jsContext) {
+        NSLog(@"JSContext is same.");
+    }
+    
     NSLog(@"share: %@", shareString);
     // 回调js的方法shareCallback
     JSValue *shareCallback = self.jsContext[@"shareCallback"];
