@@ -52,9 +52,36 @@
 
 - (void)jf_routerEventWithName:(NSString *)eventName userInfo:(NSDictionary *)userInfo {
     NSInvocation *invocation = self.eventStrategy[eventName];
+    /* Indices 0 and 1 indicate the hidden arguments self and _cmd
+     * 第0个参数为target
+     * 第1个参数为selector
+     * 自己的参数一般从第2个开始
+     */
     [invocation setArgument:&userInfo atIndex:2];
+    // 如果不持有参数，调用下面的- (void)getArgument:(void *)argumentLocation atIndex:(NSInteger)idx 方法会因为参数的消失而崩溃。
+    [invocation retainArguments];
     [invocation invoke];
     NSLog(@"eventName: %@, userInfo: %@", eventName, userInfo);
+    
+    id argument0;
+    char *argumnet1;
+    id argument2;
+    [invocation getArgument:&argument0 atIndex:0];
+    [invocation getArgument:&argumnet1 atIndex:1];
+    [invocation getArgument:&argument2 atIndex:2];
+    
+    /*
+     * argument0: <ViewController: 0x7f9dcfc108c0>,
+     * argument1: view3Event:,
+     * argument2: {
+     *  color1 = red;
+     *  color2 = green;
+     *  color3 = blue;
+     * }
+     */
+    
+    NSLog(@"argument0: %@, argument1: %s, argument2: %@", argument0, argumnet1, argument2);
+    
 }
 
 - (void)view1Event:(NSDictionary *)userInfo {
