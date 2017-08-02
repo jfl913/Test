@@ -14,4 +14,12 @@
     [[self nextResponder] jf_routerEventWithName:eventName userInfo:userInfo];
 }
 
+- (NSInvocation *)jf_createInvocationWithSelector:(SEL)aSelector {
+    NSMethodSignature *methodSignature = [self methodSignatureForSelector:aSelector];
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSignature];
+    invocation.target = self;
+    invocation.selector = aSelector;
+    return invocation;
+}
+
 @end

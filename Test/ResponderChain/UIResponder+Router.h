@@ -12,4 +12,6 @@
 
 - (void)jf_routerEventWithName:(NSString *)eventName userInfo:(NSDictionary *)userInfo;
 
+- (NSInvocation *)jf_createInvocationWithSelector:(SEL)aSelector;
+
 @end

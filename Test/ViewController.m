@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "Test.h"
 #import "UIResponder+Router.h"
 #import <Masonry.h>
 #import "View1.h"
@@ -70,19 +69,13 @@
     NSLog(@"view3Event: %@", userInfo);
 }
 
-- (NSInvocation *)createInvocationWithSelector:(SEL)aSelector {
-    NSMethodSignature *methodSignature = [self methodSignatureForSelector:aSelector];
-    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSignature];
-    return invocation;
-}
-
 - (NSDictionary <NSString *, NSInvocation *> *)eventStrategy
 {
     if (_eventStrategy == nil) {
         _eventStrategy = @{
-                           @"View1":[self createInvocationWithSelector:@selector(view1Event:)],
-                           @"View2":[self createInvocationWithSelector:@selector(view2Event:)],
-                           @"View3":[self createInvocationWithSelector:@selector(view3Event:)],
+                           View1Event:[self jf_createInvocationWithSelector:@selector(view1Event:)],
+                           View2Event:[self jf_createInvocationWithSelector:@selector(view2Event:)],
+                           View3Event:[self jf_createInvocationWithSelector:@selector(view3Event:)],
                            };
     }
     return _eventStrategy;

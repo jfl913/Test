@@ -9,6 +9,8 @@
 #import "View2.h"
 #import "UIResponder+Router.h"
 
+NSString * const View2Event = @"View2";
+
 @implementation View2
 
 - (instancetype)init {
@@ -24,7 +26,7 @@
 
 - (void)tapView:(UITapGestureRecognizer *)tapGestureRecognizer {
     NSDictionary *userInfo = @{@"color2": @"green"};
-    [self jf_routerEventWithName:@"View2" userInfo:userInfo];
+    [self jf_routerEventWithName:View2Event userInfo:userInfo];
 }
 
 - (void)jf_routerEventWithName:(NSString *)eventName userInfo:(NSDictionary *)userInfo {

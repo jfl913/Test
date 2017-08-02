@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString * const View2Event;
+
 @interface View2 : UIView
 
 @end
