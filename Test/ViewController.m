@@ -27,9 +27,6 @@
 {
     [super viewDidLoad];
     
-//    [GHIssue xtrace];
-//    [YYClassInfo xtrace];
-    
     NSDictionary *userDict = @{@"name": @"李俊峰",
                                @"gender": @"男",
                                };
