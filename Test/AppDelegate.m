@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,38 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    ViewController *vc = [ViewController new];
+    
+    CGFloat screenWidth = [[UIScreen mainScreen] bounds].size.width;
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor yellowColor];
+    self.window.rootViewController = vc;
+    [self.window makeKeyAndVisible];
+    
+    self.normalWindow = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.normalWindow.backgroundColor = [UIColor blueColor];
+    self.normalWindow.windowLevel = UIWindowLevelNormal;
+    self.normalWindow.rootViewController = vc;
+    [self.normalWindow makeKeyAndVisible];
+    
+    CGRect windowRect = CGRectMake(50,
+                                   50,
+                                   [[UIScreen mainScreen] bounds].size.width - 100,
+                                   [[UIScreen mainScreen] bounds].size.height - 100);
+    self.alertLevelWindow = [[UIWindow alloc] initWithFrame:windowRect];
+    self.alertLevelWindow.windowLevel = UIWindowLevelAlert;
+    self.alertLevelWindow.backgroundColor = [UIColor redColor];
+    self.alertLevelWindow.rootViewController = vc;
+    [self.alertLevelWindow makeKeyAndVisible];
+    
+    self.statusLevelWindow = [[UIWindow alloc] initWithFrame:CGRectMake(0, 50, screenWidth, 20)];
+    self.statusLevelWindow.windowLevel = UIWindowLevelStatusBar;
+    self.statusLevelWindow.backgroundColor = [UIColor blackColor];
+    self.statusLevelWindow.rootViewController = vc;
+    [self.statusLevelWindow makeKeyAndVisible];
+    
     return YES;
 }
 

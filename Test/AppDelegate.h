@@ -11,7 +11,9 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) UIWindow *normalWindow;
+@property (strong, nonatomic) UIWindow *alertLevelWindow;
+@property (strong, nonatomic) UIWindow *statusLevelWindow;
 
 @end
 
