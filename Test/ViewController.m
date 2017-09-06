@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Test.h"
+#import "AViewController.h"
 
 @interface ViewController ()
 
@@ -23,7 +24,9 @@
 
 - (IBAction)tapButton:(id)sender
 {
-    
+    AViewController *vc = [AViewController new];
+//    [self presentViewController:vc animated:YES completion:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end
