@@ -27,9 +27,24 @@
     NSString *htmlStr = @"<!DOCTYPE html><html><head><meta charset=\"UTF-8\"><title></title></head><body><font color=\"#ff0000\">测测你的投资风格</font></body></html>";
     NSData *htmlData = [htmlStr dataUsingEncoding:NSUnicodeStringEncoding];
     NSDictionary *optionDict = @{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType};
+    /**
+     Printing description of documentAttributeDict:
+     {
+     BottomMargin = 72;
+     Converted = "-1";
+     DocumentType = NSHTML;
+     LeftMargin = 90;
+     PaperMargin = "UIEdgeInsets: {72, 90, 72, 90}";
+     PaperSize = "NSSize: {612, 792}";
+     RightMargin = 90;
+     TopMargin = 72;
+     UTI = "public.html";
+     }
+     */
+    NSDictionary *documentAttributeDict;
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithData:htmlData
                                                                                           options:optionDict
-                                                                               documentAttributes:nil
+                                                                               documentAttributes:&documentAttributeDict
                                                                                             error:nil];
     [attributedString addAttribute:NSFontAttributeName
                              value:[UIFont systemFontOfSize:17.0]

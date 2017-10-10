@@ -85,10 +85,10 @@
 		8562E1491C2D20D90001F0A9 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				85FC29F21F8B73AF006A3D20 /* ViewController.h */,
-				85FC29F31F8B73AF006A3D20 /* ViewController.m */,
 				8562E14D1C2D20D90001F0A9 /* AppDelegate.h */,
 				8562E14E1C2D20D90001F0A9 /* AppDelegate.m */,
+				85FC29F21F8B73AF006A3D20 /* ViewController.h */,
+				85FC29F31F8B73AF006A3D20 /* ViewController.m */,
 				85EEFC011DDD8899003792FA /* Test.h */,
 				85EEFC021DDD8899003792FA /* Test.m */,
 				8562E1531C2D20D90001F0A9 /* Main.storyboard */,
