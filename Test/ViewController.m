@@ -24,7 +24,8 @@
 
 - (IBAction)tapButton:(id)sender
 {
-    NSString *htmlStr = @"<!DOCTYPE html><html><head><meta charset=\"UTF-8\"><title></title></head><body><font color=\"#ff0000\">测测你的投资风格</font></body></html>";
+//    NSString *htmlStr = @"<!DOCTYPE html><html><head><meta charset=\"UTF-8\"><title></title></head><body><font color=\"#ff0000\">测测你的投资风格</font></body></html>";
+    NSString *htmlStr = @"邀请一人赚<font color=\"red\">15</font>元";
     NSData *htmlData = [htmlStr dataUsingEncoding:NSUnicodeStringEncoding];
     NSDictionary *optionDict = @{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType};
     /**
