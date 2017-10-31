@@ -10,20 +10,8 @@
 
 @implementation Test
 
-//- (BOOL)validateAddress:(id *)ioValue error:(NSError **)error
-//{
-//    NSLog(@"ioValue: %@", *ioValue);
-//    return YES;
-//}
-//
-//- (BOOL)validatePhoneNum:(id *)ioValue error:(NSError **)error
-//{
-//    id phoneNumb = *ioValue;
-//    if ([phoneNumb isKindOfClass:[NSString class]]) {
-//        *ioValue = @([phoneNumb integerValue]);
-//    }
-//    
-//    return YES;
-//}
+- (void)logName:(NSString *)name {
+    NSLog(@"or_%@: %@", NSStringFromSelector(_cmd), name);
+}
 
 @end

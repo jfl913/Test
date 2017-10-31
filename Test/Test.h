@@ -10,9 +10,6 @@
 
 @interface Test : NSObject
 
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, strong) NSNumber *age;
-@property (nonatomic, copy) NSString *address;
-@property (nonatomic, strong) NSNumber *phoneNum;
+- (void)logName:(NSString *)name;
 
 @end

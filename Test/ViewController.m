@@ -11,6 +11,7 @@
 
 @interface ViewController ()
 
+@property (nonatomic, strong) Test *test;
 
 @end
 
@@ -23,7 +24,16 @@
 
 - (IBAction)tapButton:(id)sender
 {
-    
+    [self.test logName:@"jfl"];
+}
+
+#pragma mark - Accessor
+
+- (Test *)test {
+    if (!_test) {
+        _test = [Test new];
+    }
+    return _test;
 }
 
 @end
