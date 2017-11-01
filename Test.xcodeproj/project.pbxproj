@@ -15,6 +15,9 @@
 		8562E1571C2D20D90001F0A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8562E1561C2D20D90001F0A9 /* Assets.xcassets */; };
 		8562E15A1C2D20D90001F0A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8562E1581C2D20D90001F0A9 /* LaunchScreen.storyboard */; };
 		856B1B611FA8A4F80039B6BB /* Test+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 856B1B601FA8A4F80039B6BB /* Test+Add.m */; };
+		858240A81FA99ED800C96218 /* TestBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 858240A71FA99ED800C96218 /* TestBase.m */; };
+		858240AB1FA9A12700C96218 /* TestSuper+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 858240AA1FA9A12700C96218 /* TestSuper+Add.m */; };
+		85DF1A511FA9983B00603331 /* TestSuper.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DF1A501FA9983B00603331 /* TestSuper.m */; };
 		85EEFC031DDD8899003792FA /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EEFC021DDD8899003792FA /* Test.m */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +36,12 @@
 		8562E15B1C2D20D90001F0A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		856B1B5F1FA8A4F80039B6BB /* Test+Add.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Test+Add.h"; sourceTree = "<group>"; };
 		856B1B601FA8A4F80039B6BB /* Test+Add.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Test+Add.m"; sourceTree = "<group>"; };
+		858240A61FA99ED800C96218 /* TestBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestBase.h; sourceTree = "<group>"; };
+		858240A71FA99ED800C96218 /* TestBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestBase.m; sourceTree = "<group>"; };
+		858240A91FA9A12700C96218 /* TestSuper+Add.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestSuper+Add.h"; sourceTree = "<group>"; };
+		858240AA1FA9A12700C96218 /* TestSuper+Add.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TestSuper+Add.m"; sourceTree = "<group>"; };
+		85DF1A4F1FA9983B00603331 /* TestSuper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestSuper.h; sourceTree = "<group>"; };
+		85DF1A501FA9983B00603331 /* TestSuper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestSuper.m; sourceTree = "<group>"; };
 		85EEFC011DDD8899003792FA /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
 		85EEFC021DDD8899003792FA /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		EC355DD542C639E052625922 /* Pods-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test/Pods-Test.debug.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +105,12 @@
 				85EEFC021DDD8899003792FA /* Test.m */,
 				856B1B5F1FA8A4F80039B6BB /* Test+Add.h */,
 				856B1B601FA8A4F80039B6BB /* Test+Add.m */,
+				85DF1A4F1FA9983B00603331 /* TestSuper.h */,
+				85DF1A501FA9983B00603331 /* TestSuper.m */,
+				858240A91FA9A12700C96218 /* TestSuper+Add.h */,
+				858240AA1FA9A12700C96218 /* TestSuper+Add.m */,
+				858240A61FA99ED800C96218 /* TestBase.h */,
+				858240A71FA99ED800C96218 /* TestBase.m */,
 				8562E1531C2D20D90001F0A9 /* Main.storyboard */,
 				8562E1561C2D20D90001F0A9 /* Assets.xcassets */,
 				8562E1581C2D20D90001F0A9 /* LaunchScreen.storyboard */,
@@ -239,7 +254,10 @@
 				85EEFC031DDD8899003792FA /* Test.m in Sources */,
 				856B1B611FA8A4F80039B6BB /* Test+Add.m in Sources */,
 				8562E14F1C2D20D90001F0A9 /* AppDelegate.m in Sources */,
+				858240A81FA99ED800C96218 /* TestBase.m in Sources */,
+				858240AB1FA9A12700C96218 /* TestSuper+Add.m in Sources */,
 				8562E14C1C2D20D90001F0A9 /* main.m in Sources */,
+				85DF1A511FA9983B00603331 /* TestSuper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

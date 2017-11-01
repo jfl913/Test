@@ -1,15 +1,15 @@
 //
-//  Test+Add.m
+//  TestSuper+Add.m
 //  Test
 //
-//  Created by junfeng.li on 2017/10/31.
+//  Created by junfeng.li on 2017/11/1.
 //  Copyright © 2017年 LiJunfeng. All rights reserved.
 //
 
-#import "Test+Add.h"
+#import "TestSuper+Add.h"
 #import <objc/runtime.h>
 
-@implementation Test (Add)
+@implementation TestSuper (Add)
 
 + (void)load
 {
@@ -18,7 +18,7 @@
         Class aClass = [self class];
         
         SEL originalSelector = @selector(logName:);
-        SEL swizzledSelector = @selector(swizzle_logName:);
+        SEL swizzledSelector = @selector(super_swizzle_logName:);
         
         Method originalMethod = class_getInstanceMethod(aClass, originalSelector);
         Method swizzledMethod = class_getInstanceMethod(aClass, swizzledSelector);
@@ -45,9 +45,9 @@
     });
 }
 
-- (void)swizzle_logName:(NSString *)name {
-    NSLog(@"swizzle_(%@) %@", NSStringFromSelector(_cmd), name);
-    [self swizzle_logName:name];
+- (void)super_swizzle_logName:(NSString *)name {
+    NSLog(@"super_swizzle_(%@) %@", NSStringFromSelector(_cmd), name);
+    [self super_swizzle_logName:name];
 }
 
 @end

@@ -11,7 +11,7 @@
 @implementation Test
 
 - (void)logName:(NSString *)name {
-    NSLog(@"or_%@: %@", NSStringFromSelector(_cmd), name);
+    NSLog(@"origin_(%@) %@", NSStringFromSelector(_cmd), name);
 }
 
 @end

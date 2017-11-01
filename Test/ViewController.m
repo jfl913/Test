@@ -8,10 +8,14 @@
 
 #import "ViewController.h"
 #import "Test.h"
+#import "TestSuper.h"
+#import "TestBase.h"
 
 @interface ViewController ()
 
 @property (nonatomic, strong) Test *test;
+@property (nonatomic, strong) TestSuper *testSuper;
+@property (nonatomic, strong) TestBase *testBase;
 
 @end
 
@@ -25,6 +29,8 @@
 - (IBAction)tapButton:(id)sender
 {
     [self.test logName:@"jfl"];
+//    [self.testSuper logName:@"jfl"];
+//    [self.testBase logName:@"jfl"];
 }
 
 #pragma mark - Accessor
@@ -34,6 +40,20 @@
         _test = [Test new];
     }
     return _test;
+}
+
+- (TestSuper *)testSuper {
+    if (!_testSuper) {
+        _testSuper = [TestSuper new];
+    }
+    return _testSuper;
+}
+
+- (TestBase *)testBase {
+    if (!_testBase) {
+        _testBase = [TestBase new];
+    }
+    return _testBase;
 }
 
 @end

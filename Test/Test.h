@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TestSuper.h"
 
-@interface Test : NSObject
-
-- (void)logName:(NSString *)name;
+@interface Test : TestSuper
 
 @end
