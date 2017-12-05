@@ -18,7 +18,6 @@
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, assign) NSInteger currentIndex;
-@property (nonatomic, strong) NSMutableArray *childViewArray;
 @property (nonatomic, strong) NSMutableArray *childViewControllerArray;
 
 @end
@@ -32,7 +31,6 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     self.currentIndex = 0;
-    self.childViewArray = @[].mutableCopy;
     self.childViewControllerArray = @[].mutableCopy;
     
     [self addSubViews];
@@ -57,16 +55,13 @@
     redView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight - 64.0);
     yellowView.frame = CGRectMake(ScreenWidth, 0, ScreenWidth, ScreenHeight - 64.0);
     blueView.frame = CGRectMake(ScreenWidth * 2, 0, ScreenWidth, ScreenHeight - 64.0);
-    [self.childViewArray addObject:redView];
-    [self.childViewArray addObject:yellowView];
-    [self.childViewArray addObject:blueView];
     
     [self addChildViewController:redViewController];
     [self.scrollView addSubview:redView];
     [redViewController didMoveToParentViewController:self];
     
-//    [self.scrollView addSubview:yellowView];
-//    [self.scrollView addSubview:blueView];
+    [self.scrollView addSubview:yellowView];
+    [self.scrollView addSubview:blueView];
     
     self.scrollView.contentSize = CGSizeMake(ScreenWidth * 3, ScreenHeight - 64.0);
 }
@@ -88,26 +83,13 @@
     }
     
     UIViewController *fromChildViewController = self.childViewControllerArray[self.currentIndex];
-    UIView *fromView = self.childViewArray[self.currentIndex];
-//    [fromChildViewController beginAppearanceTransition:NO animated:YES];
-    [fromChildViewController willMoveToParentViewController:nil];
-    [fromView removeFromSuperview];
-    [fromChildViewController removeFromParentViewController];
-//    [fromChildViewController endAppearanceTransition];
-    
     self.currentIndex = index;
-    
     UIViewController *toChildViewController = self.childViewControllerArray[self.currentIndex];
-    UIView *toView = self.childViewArray[self.currentIndex];
-//    [toChildViewController beginAppearanceTransition:YES animated:YES];
-    [self addChildViewController:toChildViewController];
-    [self.scrollView addSubview:toView];
-    [toChildViewController didMoveToParentViewController:self];
-//    [toChildViewController endAppearanceTransition];
     
-    
-//    NSLog(@"subviews: %@", self.scrollView.subviews);
-//    NSLog(@"childViewControllers: %@", self.childViewControllers);
+    [fromChildViewController beginAppearanceTransition:NO animated:YES];
+    [toChildViewController beginAppearanceTransition:YES animated:YES];
+    [fromChildViewController endAppearanceTransition];
+    [toChildViewController endAppearanceTransition];
 }
 
 #pragma mark - Accessor
