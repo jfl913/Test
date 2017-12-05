@@ -92,6 +92,12 @@
     [toChildViewController endAppearanceTransition];
 }
 
+#pragma mark - UIContainerViewControllerCallbacks
+
+- (BOOL)shouldAutomaticallyForwardRotationMethods {
+    return NO;
+}
+
 #pragma mark - Accessor
 
 - (UIScrollView *)scrollView {
