@@ -8,22 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol CMCellsLordProtocol <NSObject>
-
-@required
-
-- (NSInteger)cellType;
-
-- (void)updateCell:(id)cellModel;
-
-@optional
-
-- (void)configureCellDelegate:(id)delegate;
-
-- (BOOL)enforceFrameLayout;
-
-@end
-
 @interface ViewController : UIViewController
 
 
