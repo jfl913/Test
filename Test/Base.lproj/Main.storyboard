@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vRG-3w-1VF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vRG-3w-1VF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -30,14 +31,26 @@
                                     <action selector="tapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pPz-me-EoY"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwW-ro-a23">
+                                <rect key="frame" x="8" y="72" width="359" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="DYq-km-u40" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BPo-ly-5C1"/>
                             <constraint firstItem="DYq-km-u40" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bLG-yi-iVQ"/>
+                            <constraint firstAttribute="trailing" secondItem="xwW-ro-a23" secondAttribute="trailing" constant="8" id="bi5-Ly-tyg"/>
+                            <constraint firstItem="xwW-ro-a23" firstAttribute="top" secondItem="nw0-WX-Hyn" secondAttribute="bottom" constant="8" id="f3u-kV-RxX"/>
+                            <constraint firstItem="xwW-ro-a23" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="oSA-P3-SOy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yRD-Ql-6ZA"/>
+                    <connections>
+                        <outlet property="label" destination="xwW-ro-a23" id="kBo-Ai-Bo1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -49,7 +62,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vRG-3w-1VF" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pm6-dV-zQR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
