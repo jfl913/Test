@@ -14,6 +14,9 @@
 		8562E1551C2D20D90001F0A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8562E1531C2D20D90001F0A9 /* Main.storyboard */; };
 		8562E1571C2D20D90001F0A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8562E1561C2D20D90001F0A9 /* Assets.xcassets */; };
 		8562E15A1C2D20D90001F0A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8562E1581C2D20D90001F0A9 /* LaunchScreen.storyboard */; };
+		85A8BC4221A560D100CCD65F /* AXAttributedStringChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A8BC3F21A560D100CCD65F /* AXAttributedStringChain.m */; };
+		85A8BC4321A560D100CCD65F /* AXAttributedStringMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A8BC4021A560D100CCD65F /* AXAttributedStringMaker.m */; };
+		85A8BC4421A560D100CCD65F /* AXAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A8BC4121A560D100CCD65F /* AXAttributedString.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,12 @@
 		8562E1561C2D20D90001F0A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8562E1591C2D20D90001F0A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8562E15B1C2D20D90001F0A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85A8BC3C21A560D100CCD65F /* AXAttributedStringChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXAttributedStringChain.h; sourceTree = "<group>"; };
+		85A8BC3D21A560D100CCD65F /* AXAttributedStringMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXAttributedStringMaker.h; sourceTree = "<group>"; };
+		85A8BC3E21A560D100CCD65F /* AXAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXAttributedString.h; sourceTree = "<group>"; };
+		85A8BC3F21A560D100CCD65F /* AXAttributedStringChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXAttributedStringChain.m; sourceTree = "<group>"; };
+		85A8BC4021A560D100CCD65F /* AXAttributedStringMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXAttributedStringMaker.m; sourceTree = "<group>"; };
+		85A8BC4121A560D100CCD65F /* AXAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXAttributedString.m; sourceTree = "<group>"; };
 		EC355DD542C639E052625922 /* Pods-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test/Pods-Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +91,7 @@
 		8562E1491C2D20D90001F0A9 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				85A8BC3B21A560D100CCD65F /* AXAttributedString */,
 				8562E14D1C2D20D90001F0A9 /* AppDelegate.h */,
 				8562E14E1C2D20D90001F0A9 /* AppDelegate.m */,
 				8562E1501C2D20D90001F0A9 /* ViewController.h */,
@@ -101,6 +111,19 @@
 				8562E14B1C2D20D90001F0A9 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		85A8BC3B21A560D100CCD65F /* AXAttributedString */ = {
+			isa = PBXGroup;
+			children = (
+				85A8BC3E21A560D100CCD65F /* AXAttributedString.h */,
+				85A8BC4121A560D100CCD65F /* AXAttributedString.m */,
+				85A8BC3D21A560D100CCD65F /* AXAttributedStringMaker.h */,
+				85A8BC4021A560D100CCD65F /* AXAttributedStringMaker.m */,
+				85A8BC3C21A560D100CCD65F /* AXAttributedStringChain.h */,
+				85A8BC3F21A560D100CCD65F /* AXAttributedStringChain.m */,
+			);
+			path = AXAttributedString;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,7 +250,10 @@
 			files = (
 				8562E1521C2D20D90001F0A9 /* ViewController.m in Sources */,
 				8562E14F1C2D20D90001F0A9 /* AppDelegate.m in Sources */,
+				85A8BC4321A560D100CCD65F /* AXAttributedStringMaker.m in Sources */,
+				85A8BC4421A560D100CCD65F /* AXAttributedString.m in Sources */,
 				8562E14C1C2D20D90001F0A9 /* main.m in Sources */,
+				85A8BC4221A560D100CCD65F /* AXAttributedStringChain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
