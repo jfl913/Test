@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "TeacherDao.h"
 
 @interface ViewController ()
 
@@ -22,6 +23,8 @@
 
 - (IBAction)tapButton:(id)sender
 {
+    [TeacherDao save];
+    
     
 }
 
