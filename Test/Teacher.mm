@@ -16,5 +16,6 @@ WCDB_IMPLEMENTATION(Teacher)
 WCDB_SYNTHESIZE(Teacher, name)
 WCDB_SYNTHESIZE(Teacher, age)
 WCDB_SYNTHESIZE(Teacher, student)
+WCDB_SYNTHESIZE(Teacher, studentArray)
 
 @end

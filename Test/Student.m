@@ -7,19 +7,22 @@
 //
 
 #import "Student.h"
+#import <MJExtension/MJExtension.h>
 
 @implementation Student
 
 - (void)encodeWithCoder:(NSCoder *)encoder {
-    [encoder encodeObject:self.name forKey:@"name"];
-    [encoder encodeInteger:self.age forKey:@"age"];
+    [self mj_encode:encoder];
+//    [encoder encodeObject:self.name forKey:@"name"];
+//    [encoder encodeInteger:self.age forKey:@"age"];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder {
     self = [super init];
     if (self) {
-        self.name = [decoder decodeObjectForKey:@"name"];
-        self.age = [decoder decodeIntegerForKey:@"age"];
+        [self mj_decode:decoder];
+//        self.name = [decoder decodeObjectForKey:@"name"];
+//        self.age = [decoder decodeIntegerForKey:@"age"];
     }
     return self;
 }

@@ -14,5 +14,6 @@
 WCDB_PROPERTY(name)
 WCDB_PROPERTY(age)
 WCDB_PROPERTY(student)
+WCDB_PROPERTY(studentArray)
 
 @end

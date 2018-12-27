@@ -15,5 +15,6 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, assign) NSInteger age;
 @property (nonatomic, strong) Student *student;
+@property (nonatomic, strong) NSArray<Student *> *studentArray;
 
 @end

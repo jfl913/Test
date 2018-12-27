@@ -34,6 +34,7 @@
     teacher.name = @"jfl";
     teacher.age = 32;
     teacher.student = student;
+    teacher.studentArray = @[jsonStudent, student];
     
     [database insertObject:teacher into:@"teacher"];
     
