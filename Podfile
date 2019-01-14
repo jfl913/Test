@@ -7,5 +7,6 @@ target 'Test' do
 
   # Pods for Test
   pod 'Masonry'
+  pod 'IGListKit', '~> 3.0'
 
 end
