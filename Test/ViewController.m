@@ -15,13 +15,11 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 }
 
-- (IBAction)tapButton:(id)sender
-{
+- (IBAction)tapButton:(id)sender {
     
 }
 
