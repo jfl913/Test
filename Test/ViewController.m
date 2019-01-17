@@ -9,12 +9,17 @@
 #import "ViewController.h"
 #import <Masonry/Masonry.h>
 #import "JLCollectionViewHorizontalEdgeLayout.h"
+#import "UIColor+Blend.h"
 
 #define kSectionInsetLeftRight 16
 
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) UIView *bottomView;
+
+@property (nonatomic, strong) UIColor *color1;
+@property (nonatomic, strong) UIColor *color2;
 
 @end
 
@@ -24,6 +29,7 @@
     [super viewDidLoad];
     
     self.title = @"自定义布局";
+    self.view.backgroundColor = [UIColor yellowColor];
     
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"UICollectionViewCell"];
     
@@ -38,10 +44,44 @@
             make.top.equalTo(self.view).with.offset(64);
         }
     }];
+    
+    [self.view addSubview:self.bottomView];
+    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.collectionView.mas_bottom).with.offset(16);
+        make.left.right.equalTo(self.view);
+        if (@available(iOS 11.0, *)) {
+            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
+        }
+        else {
+            make.bottom.equalTo(self.view);
+        }
+    }];
+    
+    self.color1 = [UIColor colorWithRed:87 / 255.0 green:96 / 255.0 blue:79 / 255.0 alpha:1];
+    self.color2 = [UIColor blueColor];
+    
+    self.bottomView.backgroundColor = self.color1;
 }
 
 - (IBAction)tapButton:(id)sender {
     
+}
+
+#pragma mark - Helper Method
+
+
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat contentOffsetX = scrollView.contentOffset.x;
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    
+    CGFloat ratio = contentOffsetX * 1.0 / screenWidth;
+    UIColor *blendColor = [UIColor jl_blendColor1:self.color1
+                                           color2:self.color2
+                                            ratio:ratio];
+    self.bottomView.backgroundColor = blendColor;
 }
 
 #pragma mark - UICollectionViewDelegate
@@ -109,6 +149,13 @@
         _collectionView.backgroundColor = [UIColor lightGrayColor];
     }
     return _collectionView;
+}
+
+- (UIView *)bottomView {
+    if (!_bottomView) {
+        _bottomView = [UIView new];
+    }
+    return _bottomView;
 }
 
 @end
