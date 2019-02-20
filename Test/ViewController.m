@@ -35,7 +35,7 @@
     self.childViewControllerArray = @[].mutableCopy;
     
     // 是否自己控制生命周期。
-    self.customAppearance = NO;
+    self.customAppearance = YES;
     if (self.customAppearance) {
         [self addSubViews];
     } else {

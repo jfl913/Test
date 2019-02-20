@@ -7,8 +7,11 @@
 //
 
 #import "RedViewController.h"
+#import "YellowViewController.h"
 
 @interface RedViewController ()
+
+@property (nonatomic, strong) UIButton *button;
 
 @end
 
@@ -18,6 +21,9 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor redColor];
+    
+    self.button.frame = CGRectMake(100, 100, 50, 40);
+    [self.view addSubview:self.button];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -42,6 +48,25 @@
     [super viewDidDisappear:animated];
     
     NSLog(@"%@: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+}
+
+#pragma mark - Push
+
+- (void)push:(UIButton *)button {
+    YellowViewController *viewController = [YellowViewController new];
+    viewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+#pragma mark - Accessor
+
+- (UIButton *)button {
+    if (!_button) {
+        _button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_button setTitle:@"跳转" forState:UIControlStateNormal];
+        [_button addTarget:self action:@selector(push:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _button;
 }
 
 @end

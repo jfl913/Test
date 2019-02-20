@@ -11,6 +11,8 @@
 
 @interface YellowViewController ()
 
+@property (nonatomic, strong) BlueViewController *blueVC;
+
 @end
 
 @implementation YellowViewController
@@ -20,10 +22,9 @@
     
     self.view.backgroundColor = [UIColor yellowColor];
     
-    BlueViewController *childViewController = [BlueViewController new];
-    [self addChildViewController:childViewController];
-    [self.view addSubview:childViewController.view];
-    [childViewController didMoveToParentViewController:self];
+    [self addBlue];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"移除蓝色" style:UIBarButtonItemStylePlain target:self action:@selector(removeBlue:)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -48,6 +49,29 @@
     [super viewDidDisappear:animated];
     
     NSLog(@"%@: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+}
+
+#pragma mark - Method
+
+- (void)addBlue {
+    [self addChildViewController:self.blueVC];
+    [self.view addSubview:self.blueVC.view];
+    [self.blueVC didMoveToParentViewController:self];
+}
+
+- (void)removeBlue:(UIBarButtonItem *)barButtonItem {
+    [self.blueVC willMoveToParentViewController:nil];
+    [self.blueVC.view removeFromSuperview];
+    [self.blueVC removeFromParentViewController];
+}
+
+#pragma mark - Accessor
+
+- (BlueViewController *)blueVC {
+    if (!_blueVC) {
+        _blueVC = [BlueViewController new];
+    }
+    return _blueVC;
 }
 
 @end
