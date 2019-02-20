@@ -94,7 +94,7 @@
 
 #pragma mark - UIContainerViewControllerCallbacks
 
-- (BOOL)shouldAutomaticallyForwardRotationMethods {
+- (BOOL)shouldAutomaticallyForwardAppearanceMethods {
     return NO;
 }
 
