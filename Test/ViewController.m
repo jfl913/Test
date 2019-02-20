@@ -20,12 +20,13 @@
 @property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, strong) NSMutableArray *childViewControllerArray;
 
+@property (nonatomic, assign) BOOL customAppearance; // 是否自己控制生命周期。
+
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -33,7 +34,32 @@
     self.currentIndex = 0;
     self.childViewControllerArray = @[].mutableCopy;
     
-    [self addSubViews];
+    // 是否自己控制生命周期。
+    self.customAppearance = NO;
+    if (self.customAppearance) {
+        [self addSubViews];
+    } else {
+        [self autoAppearance];
+    }
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"跳转" style:UIBarButtonItemStylePlain target:self action:@selector(push:)];
+}
+
+#pragma mark - Push
+
+- (void)push:(UIBarButtonItem *)barButtonItem {
+    YellowViewController *viewController = [YellowViewController new];
+    viewController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+#pragma mark - AutoAppearance
+
+- (void)autoAppearance {
+    RedViewController *childViewController = [RedViewController new];
+    [self addChildViewController:childViewController];
+    [self.view addSubview:childViewController.view];
+    [childViewController didMoveToParentViewController:self];
 }
 
 #pragma mark - Helper Method - UI
@@ -95,7 +121,11 @@
 #pragma mark - UIContainerViewControllerCallbacks
 
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods {
-    return NO;
+    if (self.customAppearance) {
+        return NO;
+    } else {
+        return YES;
+    }
 }
 
 #pragma mark - Accessor

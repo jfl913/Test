@@ -7,6 +7,7 @@
 //
 
 #import "YellowViewController.h"
+#import "BlueViewController.h"
 
 @interface YellowViewController ()
 
@@ -18,6 +19,11 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor yellowColor];
+    
+    BlueViewController *childViewController = [BlueViewController new];
+    [self addChildViewController:childViewController];
+    [self.view addSubview:childViewController.view];
+    [childViewController didMoveToParentViewController:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
