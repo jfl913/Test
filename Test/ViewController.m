@@ -20,12 +20,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.title = @"首页";
 }
 
 - (IBAction)tapButton:(id)sender
 {
     AViewController *vc = [AViewController new];
-//    [self presentViewController:vc animated:YES completion:nil];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

@@ -20,25 +20,45 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor yellowColor];
     
     self.button = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.button.frame = CGRectMake(50, 100, 40, 40);
-    [self.button setTitle:@"C" forState:UIControlStateNormal];
+    self.button.frame = CGRectMake(50, 50, 80, 40);
+    [self.button setTitle:@"pop-C" forState:UIControlStateNormal];
     [self.button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [self.button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.button];
     
     self.closebutton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.closebutton.frame = CGRectMake(50, 300, 40, 40);
-    [self.closebutton setTitle:@"C" forState:UIControlStateNormal];
+    self.closebutton.frame = CGRectMake(50, 300, 100, 40);
+    [self.closebutton setTitle:@"dismiss-C" forState:UIControlStateNormal];
     [self.closebutton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [self.closebutton addTarget:self action:@selector(closebuttonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.closebutton];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSLog(@"%@-%@",NSStringFromClass(self.class), NSStringFromSelector(_cmd));
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSLog(@"%@-%@",NSStringFromClass(self.class), NSStringFromSelector(_cmd));
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    NSLog(@"%@-%@",NSStringFromClass(self.class), NSStringFromSelector(_cmd));
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    NSLog(@"%@-%@",NSStringFromClass(self.class), NSStringFromSelector(_cmd));
+}
+
 - (void)buttonAction:(UIButton *)button {
-    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)closebuttonAction:(UIButton *)button {

@@ -21,26 +21,45 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor redColor];
     
     self.button = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.button.frame = CGRectMake(50, 100, 40, 40);
-    [self.button setTitle:@"B" forState:UIControlStateNormal];
+    self.button.frame = CGRectMake(50, 50, 90, 40);
+    [self.button setTitle:@"push-C" forState:UIControlStateNormal];
     [self.button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [self.button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.button];
     
     self.closebutton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.closebutton.frame = CGRectMake(50, 300, 40, 40);
-    [self.closebutton setTitle:@"B" forState:UIControlStateNormal];
+    self.closebutton.frame = CGRectMake(50, 300, 90, 40);
+    [self.closebutton setTitle:@"dismiss-B" forState:UIControlStateNormal];
     [self.closebutton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [self.closebutton addTarget:self action:@selector(closebuttonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.closebutton];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSLog(@"%@-%@",NSStringFromClass(self.class), NSStringFromSelector(_cmd));
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSLog(@"%@-%@",NSStringFromClass(self.class), NSStringFromSelector(_cmd));
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    NSLog(@"%@-%@",NSStringFromClass(self.class), NSStringFromSelector(_cmd));
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    NSLog(@"%@-%@",NSStringFromClass(self.class), NSStringFromSelector(_cmd));
+}
+
 - (void)buttonAction:(UIButton *)button {
     CViewController *vc = [CViewController new];
-//    [self presentViewController:vc animated:YES completion:nil];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

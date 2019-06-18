@@ -7,6 +7,7 @@
 //
 
 #import "AViewController.h"
+#import "ModalContainerViewController.h"
 #import "BViewController.h"
 
 @interface AViewController ()
@@ -21,32 +22,58 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"A";
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.button = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.button.frame = CGRectMake(50, 100, 40, 40);
-    [self.button setTitle:@"A" forState:UIControlStateNormal];
+    self.button.frame = CGRectMake(50, 100, 90, 40);
+    [self.button setTitle:@"present-B" forState:UIControlStateNormal];
     [self.button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [self.button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.button];
     
     self.closebutton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.closebutton.frame = CGRectMake(50, 300, 40, 40);
-    [self.closebutton setTitle:@"A" forState:UIControlStateNormal];
+    self.closebutton.frame = CGRectMake(50, 300, 60, 40);
+    [self.closebutton setTitle:@"pop-A" forState:UIControlStateNormal];
     [self.closebutton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [self.closebutton addTarget:self action:@selector(closebuttonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.closebutton];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSLog(@"%@-%@",NSStringFromClass(self.class), NSStringFromSelector(_cmd));
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSLog(@"%@-%@",NSStringFromClass(self.class), NSStringFromSelector(_cmd));
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    NSLog(@"%@-%@",NSStringFromClass(self.class), NSStringFromSelector(_cmd));
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    NSLog(@"%@-%@",NSStringFromClass(self.class), NSStringFromSelector(_cmd));
+}
+
 - (void)buttonAction:(UIButton *)button {
     BViewController *vc = [BViewController new];
-//    [self presentViewController:vc animated:YES completion:nil];
-    UINavigationController *nv = [[UINavigationController alloc] initWithRootViewController:vc];
-    [self presentViewController:nv animated:YES completion:nil];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    nav.navigationBar.hidden = YES;
+    
+    ModalContainerViewController *modalVC = [ModalContainerViewController new];
+    modalVC.contentViewController = nav;
+    
+    [self presentViewController:modalVC animated:YES completion:nil];
 }
 
 - (void)closebuttonAction:(UIButton *)button {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

@@ -17,6 +17,7 @@
 		859936141F5FF0A900F276DF /* AViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 859936131F5FF0A900F276DF /* AViewController.m */; };
 		859936171F5FF0C200F276DF /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 859936161F5FF0C200F276DF /* BViewController.m */; };
 		8599361A1F5FF0CF00F276DF /* CViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 859936191F5FF0CF00F276DF /* CViewController.m */; };
+		85AC35AC22B8D09D00072D93 /* ModalContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AC35AB22B8D09D00072D93 /* ModalContainerViewController.m */; };
 		85EEFC031DDD8899003792FA /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EEFC021DDD8899003792FA /* Test.m */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,8 @@
 		859936161F5FF0C200F276DF /* BViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BViewController.m; sourceTree = "<group>"; };
 		859936181F5FF0CF00F276DF /* CViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CViewController.h; sourceTree = "<group>"; };
 		859936191F5FF0CF00F276DF /* CViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CViewController.m; sourceTree = "<group>"; };
+		85AC35AA22B8D09D00072D93 /* ModalContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ModalContainerViewController.h; path = ../../../ModalContainerViewController.h; sourceTree = "<group>"; };
+		85AC35AB22B8D09D00072D93 /* ModalContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ModalContainerViewController.m; path = ../../../ModalContainerViewController.m; sourceTree = "<group>"; };
 		85EEFC011DDD8899003792FA /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
 		85EEFC021DDD8899003792FA /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		EC355DD542C639E052625922 /* Pods-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test/Pods-Test.debug.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +103,8 @@
 				8562E1511C2D20D90001F0A9 /* ViewController.m */,
 				859936121F5FF0A800F276DF /* AViewController.h */,
 				859936131F5FF0A900F276DF /* AViewController.m */,
+				85AC35AA22B8D09D00072D93 /* ModalContainerViewController.h */,
+				85AC35AB22B8D09D00072D93 /* ModalContainerViewController.m */,
 				859936151F5FF0C200F276DF /* BViewController.h */,
 				859936161F5FF0C200F276DF /* BViewController.m */,
 				859936181F5FF0CF00F276DF /* CViewController.h */,
@@ -245,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85AC35AC22B8D09D00072D93 /* ModalContainerViewController.m in Sources */,
 				8562E1521C2D20D90001F0A9 /* ViewController.m in Sources */,
 				859936171F5FF0C200F276DF /* BViewController.m in Sources */,
 				859936141F5FF0A900F276DF /* AViewController.m in Sources */,
