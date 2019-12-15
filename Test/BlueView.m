@@ -6,10 +6,10 @@
 //  Copyright © 2016年 LiJunfeng. All rights reserved.
 //
 
-#import "AView.h"
+#import "BlueView.h"
 #import "UIView+MethodSwizzle.h"
 
-@implementation AView
+@implementation BlueView
 
 //-(BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
 //{
@@ -18,17 +18,17 @@
 
 //- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event
 //{
-////    UIResponder * next = [self nextResponder];
-////    NSMutableString * prefix = @"".mutableCopy;
-////    
-////    while (next != nil) {
-////        NSLog(@"%@%@", prefix, [next class]);
-////        [prefix appendString: @"--"];
-////        next = [next nextResponder];
-////    }
+//    UIResponder * next = [self nextResponder];
+//    NSMutableString * prefix = @"".mutableCopy;
+//
+//    while (next != nil) {
+//        NSLog(@"%@%@", prefix, [next class]);
+//        [prefix appendString: @"--"];
+//        next = [next nextResponder];
+//    }
 //    NSLog(@"%@", NSStringFromSelector(_cmd));
 //}
-//
+
 //- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event
 //{
 //    NSLog(@"%@", NSStringFromSelector(_cmd));

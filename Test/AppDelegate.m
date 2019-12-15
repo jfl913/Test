@@ -14,6 +14,9 @@
 
 @implementation AppDelegate
 
+- (void)nilTargetButtonAction:(UIButton *)button {
+    NSLog(@"nilTargetButtonAppDelegateAction: %@", button);
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.

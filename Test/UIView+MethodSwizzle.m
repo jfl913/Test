@@ -8,7 +8,7 @@
 
 #import "UIView+MethodSwizzle.h"
 #import <objc/runtime.h>
-#import "AView.h"
+#import "BlueView.h"
 
 @implementation UIView (MethodSwizzle)
 
@@ -16,11 +16,11 @@
 //    Method origin = class_getInstanceMethod([AView class], @selector(touchesBegan:withEvent:));
 //    Method custom = class_getInstanceMethod([AView class], @selector(lxd_touchesBegan:withEvent:));
 //    method_exchangeImplementations(origin, custom);
-//    
+//
 //    origin = class_getInstanceMethod([AView class], @selector(touchesMoved:withEvent:));
 //    custom = class_getInstanceMethod([AView class], @selector(lxd_touchesMoved:withEvent:));
 //    method_exchangeImplementations(origin, custom);
-//    
+//
 //    origin = class_getInstanceMethod([AView class], @selector(touchesEnded:withEvent:));
 //    custom = class_getInstanceMethod([AView class], @selector(lxd_touchesEnded:withEvent:));
 //    method_exchangeImplementations(origin, custom);
@@ -31,7 +31,7 @@
 //    NSLog(@"%@ --- begin", self.class);
 //    [self lxd_touchesBegan: touches withEvent: event];
 //}
-//
+
 //- (void)lxd_touchesMoved: (NSSet<UITouch *> *)touches withEvent: (UIEvent *)event
 //{
 //    NSLog(@"%@ --- move", self.class);
@@ -49,13 +49,23 @@
     Method origin = class_getInstanceMethod([self class], @selector(hitTest:withEvent:));
     Method custom = class_getInstanceMethod([self class], @selector(jfl_hitTest:withEvent:));
     method_exchangeImplementations(origin, custom);
+
+//    Method originPointInside = class_getInstanceMethod([self class], @selector(pointInside:withEvent:));
+//    Method customPointInside = class_getInstanceMethod([self class], @selector(jfl_pointInside:withEvent:));
+//    method_exchangeImplementations(originPointInside, customPointInside);
 }
 
 -(UIView *)jfl_hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
     UIView *testView = [self jfl_hitTest:point withEvent:event];
-    NSLog(@"test-view: %@", testView);
+    NSLog(@"hitTest-self: %@, test-view: %@-%@", NSStringFromClass([self class]),NSStringFromClass([testView class]),testView);
     return testView;
 }
+
+//- (BOOL)jfl_pointInside:(CGPoint)point withEvent:(UIEvent *)event {
+//    BOOL inside = [self jfl_pointInside:point withEvent:event];
+//    NSLog(@"pointInside-self: %@, inside: %@", NSStringFromClass([self class]),[NSNumber numberWithBool:inside]);
+//    return inside;
+//}
 
 @end

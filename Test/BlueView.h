@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AView : UIView
+@interface BlueView : UIView
 
 @end
