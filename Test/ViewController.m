@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 #import "TestModel.h"
+#import "Parent.h"
+#import "Child.h"
+#import "Parent+Add.h"
 
 @interface ViewController ()
 
@@ -19,7 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    TestModel *testModel = [TestModel new];
+    Parent *parent = [Parent new];
+    [parent printName];
+    
+    Child *child = [Child new];
+    [child printName];
 }
 
 - (IBAction)tapButton:(id)sender {
