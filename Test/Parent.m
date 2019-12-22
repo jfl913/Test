@@ -14,4 +14,8 @@
     NSLog(@"Parent");
 }
 
+- (id)forwardingTargetForSelector:(SEL)aSelector {
+    return [super forwardingTargetForSelector:aSelector];
+}
+
 @end

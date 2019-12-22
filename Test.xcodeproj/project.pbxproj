@@ -18,6 +18,7 @@
 		915C42AE23AF57D000CC13F4 /* Parent.m in Sources */ = {isa = PBXBuildFile; fileRef = 915C42AD23AF57D000CC13F4 /* Parent.m */; };
 		915C42B123AF57E300CC13F4 /* Child.m in Sources */ = {isa = PBXBuildFile; fileRef = 915C42B023AF57E300CC13F4 /* Child.m */; };
 		915C42B423AF580400CC13F4 /* Parent+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 915C42B323AF580400CC13F4 /* Parent+Add.m */; };
+		915C42B723AF746B00CC13F4 /* NSObject+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 915C42B623AF746B00CC13F4 /* NSObject+Add.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		915C42B023AF57E300CC13F4 /* Child.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Child.m; sourceTree = "<group>"; };
 		915C42B223AF580400CC13F4 /* Parent+Add.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Parent+Add.h"; sourceTree = "<group>"; };
 		915C42B323AF580400CC13F4 /* Parent+Add.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Parent+Add.m"; sourceTree = "<group>"; };
+		915C42B523AF746B00CC13F4 /* NSObject+Add.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Add.h"; sourceTree = "<group>"; };
+		915C42B623AF746B00CC13F4 /* NSObject+Add.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Add.m"; sourceTree = "<group>"; };
 		EC355DD542C639E052625922 /* Pods-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test/Pods-Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +114,8 @@
 				915C42B023AF57E300CC13F4 /* Child.m */,
 				915C42B223AF580400CC13F4 /* Parent+Add.h */,
 				915C42B323AF580400CC13F4 /* Parent+Add.m */,
+				915C42B523AF746B00CC13F4 /* NSObject+Add.h */,
+				915C42B623AF746B00CC13F4 /* NSObject+Add.m */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				8562E14F1C2D20D90001F0A9 /* AppDelegate.m in Sources */,
 				8562E14C1C2D20D90001F0A9 /* main.m in Sources */,
 				915C42AB23ACF6DA00CC13F4 /* TestModel.m in Sources */,
+				915C42B723AF746B00CC13F4 /* NSObject+Add.m in Sources */,
 				915C42B423AF580400CC13F4 /* Parent+Add.m in Sources */,
 				915C42AE23AF57D000CC13F4 /* Parent.m in Sources */,
 			);
