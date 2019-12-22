@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "TestModel.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    TestModel *testModel = [TestModel new];
 }
 
 - (IBAction)tapButton:(id)sender {
