@@ -14,6 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)printName;
 
+- (void)printAge;
+
++ (void)printGender;
+
 @end
 
 NS_ASSUME_NONNULL_END

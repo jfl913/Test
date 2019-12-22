@@ -28,12 +28,18 @@
 //    Child *child = [Child new];
 //    [child printName];
     
-    Parent *parent = [Parent new];
-    [parent performSelector:@selector(printAge)];
+//    Parent *parent = [Parent new];
+//    [parent performSelector:@selector(printAge)];
+    
+//    [Parent performSelector:@selector(printGender)];
 }
 
 - (IBAction)tapButton:(id)sender {
+//    Parent *parent = [Parent new];
+//    [parent printAge];
     
+//    [Parent printGender];
+    [Parent performSelector:@selector(printGender)];
 }
 
 @end

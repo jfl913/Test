@@ -18,4 +18,8 @@
     return [super forwardingTargetForSelector:aSelector];
 }
 
++ (id)forwardingTargetForSelector:(SEL)aSelector {
+    return [super forwardingTargetForSelector:aSelector];
+}
+
 @end

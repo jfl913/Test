@@ -14,6 +14,7 @@
 
 + (void)load {
     [[self class] jr_swizzleMethod:@selector(forwardingTargetForSelector:) withMethod:@selector(jl_forwardingTargetForSelector:) error:nil];
+    [[self class] jr_swizzleClassMethod:@selector(forwardingTargetForSelector:) withClassMethod:@selector(jl_forwardingTargetForSelector:) error:nil];
 }
 
 - (id)jl_forwardingTargetForSelector:(SEL)selector {
@@ -34,10 +35,35 @@
     }
     // 如果类没有对应的方法，则动态添加一个
     if (!class_getInstanceMethod(NSClassFromString(className), selector)) {
-        class_addMethod(cls, selector, (IMP)Crash, "@@:@");
+        NSLog(@"不存在 %@ %@", errClassName, errSel);
+        class_addMethod(cls, selector, (IMP)dynamicMethodIMP, "v@:");
     }
     // 把消息转发到当前动态生成类的实例对象上
     return [[cls alloc] init];
+}
+
++ (id)jl_forwardingTargetForSelector:(SEL)aSelector {
+    // 创建一个新类
+    NSString *errClassName = NSStringFromClass([self class]);
+    NSString *errSel = NSStringFromSelector(aSelector);
+    NSLog(@"出问题的类，出问题的类方法 == %@ %@", errClassName, errSel);
+    
+    NSString *className = @"CrachClass";
+    Class cls = NSClassFromString(className);
+    
+    // 如果类不存在 动态创建一个类
+    if (!cls) {
+        Class superClsss = [NSObject class];
+        cls = objc_allocateClassPair(superClsss, className.UTF8String, 0);
+        // 注册类
+        objc_registerClassPair(cls);
+    }
+    // 如果类没有对应的方法，则动态添加一个
+    if (!class_getClassMethod(cls, aSelector)) {
+        class_addMethod(object_getClass(cls), aSelector, (IMP)dynamicMethodIMP, "v@:");
+    }
+    
+    return cls;
 }
 
 //- (id)jl_forwardingTargetForSelector:(SEL)selector {
@@ -91,10 +117,11 @@
 //    return [self jl_forwardingTargetForSelector:selector];
 //}
 
+
+
 // 动态添加的方法实现
-static int Crash(id slf, SEL selector) {
-    NSLog(@"deal crash");
-    return 0;
+void dynamicMethodIMP(id self, SEL selector) {
+    NSLog(@"deal crash %@ %@", NSStringFromClass([self class]), NSStringFromSelector(selector));
 }
 
 @end
