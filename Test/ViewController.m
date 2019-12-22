@@ -22,8 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    Parent *parent = [Parent new];
-    [parent printName];
+//    Parent *parent = [Parent new];
+//    [parent printName];
     
     Child *child = [Child new];
     [child printName];

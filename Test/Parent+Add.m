@@ -7,12 +7,21 @@
 //
 
 #import "Parent+Add.h"
-
+#import <JRSwizzle/JRSwizzle.h>
 
 @implementation Parent (Add)
 
-- (void)printName {
-    NSLog(@"Parent+Add");
++ (void)load {
+    [[self class] jr_swizzleMethod:@selector(printName) withMethod:@selector(jl_printName) error:nil];
+}
+
+//- (void)printName {
+//    NSLog(@"Parent+Add");
+//}
+
+- (void)jl_printName {
+    NSLog(@"jl_printName");
+    [self jl_printName];
 }
 
 @end
