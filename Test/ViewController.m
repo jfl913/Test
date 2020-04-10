@@ -20,10 +20,12 @@
 }
 
 - (IBAction)tapButton:(id)sender {
-//    [self doThreadUnSafeAction];
+    [self doThreadUnSafeAction];
 //    [self doSemaphoreAction];
 //    [self testNSMutableArray];
-    [self testNSMutableArrayMemory];
+//    [self testNSMutableArrayMemory];
+//    [self deadLock];
+//    [self noDeadLock];
 }
 
 - (void)doThreadUnSafeAction {
@@ -79,6 +81,50 @@
    for (int i = 0; i < 10; i ++) {
        [array addObject:@"11"];
    }
+}
+
+- (void)deadLock {
+//    dispatch_sync(dispatch_get_main_queue(), ^{
+//        NSLog(@"同步任务在 %@ 执行", [NSThread currentThread]);
+//    });
+    
+//    dispatch_queue_t serialQueue = dispatch_queue_create("com.gcd.serial", DISPATCH_QUEUE_SERIAL);
+//    dispatch_async(serialQueue, ^{
+//        NSLog(@"异步任务在 %@ 执行", [NSThread currentThread]);
+//        dispatch_sync(serialQueue, ^{
+//            NSLog(@"同步任务在 %@ 执行", [NSThread currentThread]);
+//        });
+//    });
+    
+    
+    NSLog(@"同步任务0在 %@ 执行", [NSThread currentThread]);
+    dispatch_queue_t serialQueue = dispatch_queue_create("com.gcd.serial", DISPATCH_QUEUE_SERIAL);
+    dispatch_sync(serialQueue, ^{
+        NSLog(@"同步任务1在 %@ 执行", [NSThread currentThread]);
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            NSLog(@"同步任务2在 %@ 执行", [NSThread currentThread]);
+        });
+    });
+}
+
+- (void)noDeadLock {
+    dispatch_queue_t serialQueue = dispatch_queue_create("com.gcd.serial", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t concurrentQueue = dispatch_queue_create("com.gcd.concurrent", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_async(serialQueue, ^{
+        NSLog(@"before 异步任务在 %@ 执行", [NSThread currentThread]);
+        dispatch_sync(concurrentQueue, ^{
+            NSLog(@"同步任务在 %@ 执行", [NSThread currentThread]);
+        });
+        NSLog(@"after 异步任务在 %@ 执行", [NSThread currentThread]);
+    });
+    
+//    dispatch_queue_t concurrentQueue = dispatch_queue_create("com.gcd.concurrent", DISPATCH_QUEUE_CONCURRENT);
+//    dispatch_async(concurrentQueue, ^{
+//        NSLog(@"异步任务在 %@ 执行", [NSThread currentThread]);
+//        dispatch_sync(concurrentQueue, ^{
+//            NSLog(@"同步任务在 %@ 执行", [NSThread currentThread]);
+//        });
+//    });
 }
 
 @end
