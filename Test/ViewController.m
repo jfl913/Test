@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "Person.h"
+#import "Teacher.h"
 
 @interface ViewController ()
 
@@ -17,6 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [Teacher new];
+    
 }
 
 - (IBAction)tapButton:(id)sender {

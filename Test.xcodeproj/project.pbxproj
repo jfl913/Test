@@ -14,6 +14,12 @@
 		8562E1551C2D20D90001F0A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8562E1531C2D20D90001F0A9 /* Main.storyboard */; };
 		8562E1571C2D20D90001F0A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8562E1561C2D20D90001F0A9 /* Assets.xcassets */; };
 		8562E15A1C2D20D90001F0A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8562E1581C2D20D90001F0A9 /* LaunchScreen.storyboard */; };
+		9192E544244FEDDE00DBD9CC /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 9192E543244FEDDE00DBD9CC /* Person.m */; };
+		9192E54D244FEE2E00DBD9CC /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 9192E54C244FEE2E00DBD9CC /* Student.m */; };
+		9192E550244FEE3C00DBD9CC /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9192E54F244FEE3C00DBD9CC /* Teacher.m */; };
+		9192E553244FF05B00DBD9CC /* Person+Category1.m in Sources */ = {isa = PBXBuildFile; fileRef = 9192E552244FF05B00DBD9CC /* Person+Category1.m */; };
+		9192E556244FF06800DBD9CC /* Person+Category2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9192E555244FF06800DBD9CC /* Person+Category2.m */; };
+		9192E559244FF07400DBD9CC /* Person+Category3.m in Sources */ = {isa = PBXBuildFile; fileRef = 9192E558244FF07400DBD9CC /* Person+Category3.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +35,18 @@
 		8562E1561C2D20D90001F0A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8562E1591C2D20D90001F0A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8562E15B1C2D20D90001F0A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9192E542244FEDDD00DBD9CC /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		9192E543244FEDDE00DBD9CC /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		9192E54B244FEE2E00DBD9CC /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		9192E54C244FEE2E00DBD9CC /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		9192E54E244FEE3C00DBD9CC /* Teacher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
+		9192E54F244FEE3C00DBD9CC /* Teacher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
+		9192E551244FF05B00DBD9CC /* Person+Category1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+Category1.h"; sourceTree = "<group>"; };
+		9192E552244FF05B00DBD9CC /* Person+Category1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+Category1.m"; sourceTree = "<group>"; };
+		9192E554244FF06800DBD9CC /* Person+Category2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+Category2.h"; sourceTree = "<group>"; };
+		9192E555244FF06800DBD9CC /* Person+Category2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+Category2.m"; sourceTree = "<group>"; };
+		9192E557244FF07400DBD9CC /* Person+Category3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+Category3.h"; sourceTree = "<group>"; };
+		9192E558244FF07400DBD9CC /* Person+Category3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+Category3.m"; sourceTree = "<group>"; };
 		EC355DD542C639E052625922 /* Pods-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test/Pods-Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +109,18 @@
 				8562E1581C2D20D90001F0A9 /* LaunchScreen.storyboard */,
 				8562E15B1C2D20D90001F0A9 /* Info.plist */,
 				8562E14A1C2D20D90001F0A9 /* Supporting Files */,
+				9192E542244FEDDD00DBD9CC /* Person.h */,
+				9192E543244FEDDE00DBD9CC /* Person.m */,
+				9192E54B244FEE2E00DBD9CC /* Student.h */,
+				9192E54C244FEE2E00DBD9CC /* Student.m */,
+				9192E54E244FEE3C00DBD9CC /* Teacher.h */,
+				9192E54F244FEE3C00DBD9CC /* Teacher.m */,
+				9192E551244FF05B00DBD9CC /* Person+Category1.h */,
+				9192E552244FF05B00DBD9CC /* Person+Category1.m */,
+				9192E554244FF06800DBD9CC /* Person+Category2.h */,
+				9192E555244FF06800DBD9CC /* Person+Category2.m */,
+				9192E557244FF07400DBD9CC /* Person+Category3.h */,
+				9192E558244FF07400DBD9CC /* Person+Category3.m */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -144,6 +174,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -196,9 +227,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9192E550244FEE3C00DBD9CC /* Teacher.m in Sources */,
 				8562E1521C2D20D90001F0A9 /* ViewController.m in Sources */,
+				9192E559244FF07400DBD9CC /* Person+Category3.m in Sources */,
 				8562E14F1C2D20D90001F0A9 /* AppDelegate.m in Sources */,
+				9192E553244FF05B00DBD9CC /* Person+Category1.m in Sources */,
+				9192E54D244FEE2E00DBD9CC /* Student.m in Sources */,
+				9192E544244FEDDE00DBD9CC /* Person.m in Sources */,
 				8562E14C1C2D20D90001F0A9 /* main.m in Sources */,
+				9192E556244FF06800DBD9CC /* Person+Category2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
