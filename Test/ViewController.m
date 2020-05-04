@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ClassContainer.h"
 
 @interface ViewController ()
 
@@ -20,7 +21,25 @@
 }
 
 - (IBAction)tapButton:(id)sender {
+    ClassContainer *containerObject = [ClassContainer new];
+    ClassUnsafeUnretained *unsafeUnretainedObject = [ClassUnsafeUnretained new];
+    ClassWeak *weakObject = [ClassWeak new];
     
+    containerObject.unsafeUnretainedObject = unsafeUnretainedObject;
+    containerObject.weakObject = weakObject;
+    
+    BOOL testWeak = NO;
+    if (testWeak) {
+        [containerObject.weakObject print];
+        [weakObject print];
+        weakObject = nil;
+        [containerObject.weakObject print];
+    } else {
+        [containerObject.unsafeUnretainedObject print];
+        [unsafeUnretainedObject print];
+        unsafeUnretainedObject = nil;
+        [containerObject.unsafeUnretainedObject print];
+    }
 }
 
 @end
