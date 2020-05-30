@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "TestViewController.h"
 
 @interface ViewController ()
 
@@ -21,7 +22,10 @@
 
 - (IBAction)tapButton:(id)sender {
 //    [self testMRCBlockType];
-    [self testMRCStackBlock];
+//    [self testMRCStackBlock];
+    
+    TestViewController *testVC = [TestViewController new];
+    [self.navigationController pushViewController:testVC animated:YES];
 }
 
 // 需要设置成 MRC 环境。
@@ -62,7 +66,5 @@ void (^stackBlock)(void);
 //    } copy];
     NSLog(@"stackBlock reference auto var type: %@", [stackBlock class]);
 }
-
-- (void)
 
 @end

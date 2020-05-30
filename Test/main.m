@@ -21,8 +21,8 @@ void test()
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
-        test();
-        block();
+//        test();
+//        block();
 //        block();
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
