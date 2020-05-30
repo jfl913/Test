@@ -19,6 +19,7 @@
 		858240AB1FA9A12700C96218 /* TestSuper+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 858240AA1FA9A12700C96218 /* TestSuper+Add.m */; };
 		85DF1A511FA9983B00603331 /* TestSuper.m in Sources */ = {isa = PBXBuildFile; fileRef = 85DF1A501FA9983B00603331 /* TestSuper.m */; };
 		85EEFC031DDD8899003792FA /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EEFC021DDD8899003792FA /* Test.m */; };
+		91D4FCB82482B138009D8D11 /* TestBase+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D4FCB72482B138009D8D11 /* TestBase+Add.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		85DF1A501FA9983B00603331 /* TestSuper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestSuper.m; sourceTree = "<group>"; };
 		85EEFC011DDD8899003792FA /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
 		85EEFC021DDD8899003792FA /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
+		91D4FCB62482B138009D8D11 /* TestBase+Add.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestBase+Add.h"; sourceTree = "<group>"; };
+		91D4FCB72482B138009D8D11 /* TestBase+Add.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TestBase+Add.m"; sourceTree = "<group>"; };
 		EC355DD542C639E052625922 /* Pods-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test/Pods-Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +114,8 @@
 				858240AA1FA9A12700C96218 /* TestSuper+Add.m */,
 				858240A61FA99ED800C96218 /* TestBase.h */,
 				858240A71FA99ED800C96218 /* TestBase.m */,
+				91D4FCB62482B138009D8D11 /* TestBase+Add.h */,
+				91D4FCB72482B138009D8D11 /* TestBase+Add.m */,
 				8562E1531C2D20D90001F0A9 /* Main.storyboard */,
 				8562E1561C2D20D90001F0A9 /* Assets.xcassets */,
 				8562E1581C2D20D90001F0A9 /* LaunchScreen.storyboard */,
@@ -139,8 +144,6 @@
 				8562E1431C2D20D90001F0A9 /* Sources */,
 				8562E1441C2D20D90001F0A9 /* Frameworks */,
 				8562E1451C2D20D90001F0A9 /* Resources */,
-				66962280F0F962697C949819 /* [CP] Embed Pods Frameworks */,
-				6769C9179CDB7016C8F09F64 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -171,6 +174,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -198,49 +202,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		66962280F0F962697C949819 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Test/Pods-Test-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6769C9179CDB7016C8F09F64 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Test/Pods-Test-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7E0D276B26B0175ABB11E929 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Test-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -253,6 +230,7 @@
 				8562E1521C2D20D90001F0A9 /* ViewController.m in Sources */,
 				85EEFC031DDD8899003792FA /* Test.m in Sources */,
 				856B1B611FA8A4F80039B6BB /* Test+Add.m in Sources */,
+				91D4FCB82482B138009D8D11 /* TestBase+Add.m in Sources */,
 				8562E14F1C2D20D90001F0A9 /* AppDelegate.m in Sources */,
 				858240A81FA99ED800C96218 /* TestBase.m in Sources */,
 				858240AB1FA9A12700C96218 /* TestSuper+Add.m in Sources */,

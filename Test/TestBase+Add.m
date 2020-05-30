@@ -1,15 +1,15 @@
 //
-//  TestSuper+Add.m
+//  TestBase+Add.m
 //  Test
 //
-//  Created by junfeng.li on 2017/11/1.
-//  Copyright © 2017年 LiJunfeng. All rights reserved.
+//  Created by Li Junfeng on 2020/5/30.
+//  Copyright © 2020 LiJunfeng. All rights reserved.
 //
 
-#import "TestSuper+Add.h"
+#import "TestBase+Add.h"
 #import <objc/runtime.h>
 
-@implementation TestSuper (Add)
+@implementation TestBase (Add)
 
 + (void)load
 {
@@ -18,10 +18,14 @@
         Class aClass = [self class];
         
         SEL originalSelector = @selector(logName:);
-        SEL swizzledSelector = @selector(super_swizzle_logName:);
+        SEL swizzledSelector = @selector(swizzle_logName:);
         
         Method originalMethod = class_getInstanceMethod(aClass, originalSelector);
         Method swizzledMethod = class_getInstanceMethod(aClass, swizzledSelector);
+        
+        if (originalMethod == nil) {
+            NSLog(@"originalMethod: %@", originalMethod);
+        }
         
         BOOL isPlanA = YES;
         if (isPlanA) { // Plan A.
@@ -36,6 +40,12 @@
                                     swizzledSelector,
                                     method_getImplementation(originalMethod),
                                     method_getTypeEncoding(originalMethod));
+                Method replaceMethod = class_getInstanceMethod(aClass, swizzledSelector);
+                // 如果父类也没有实现，didAddMethod 里的处理还是会出问题，因为此时 class_replaceMethod 方法无效。
+                // 因此，不能在 swizzle_logName 方法里调用 [self swizzle_logName:name]; 如果调用就会导致无限循环，最终崩溃。
+                if (replaceMethod == swizzledMethod) {
+                    NSLog(@"if originalMethod is nil, class_replaceMethod do nothing.");
+                }
             } else {
                 method_exchangeImplementations(originalMethod, swizzledMethod);
             }
@@ -45,9 +55,9 @@
     });
 }
 
-- (void)super_swizzle_logName:(NSString *)name {
-    NSLog(@"super_swizzle_(%@) %@", NSStringFromSelector(_cmd), name);
-    [self super_swizzle_logName:name];
+- (void)swizzle_logName:(NSString *)name {
+    NSLog(@"swizzle_(%@) %@", NSStringFromSelector(_cmd), name);
+    [self swizzle_logName:name];
 }
 
 @end

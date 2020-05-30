@@ -28,9 +28,9 @@
 
 - (IBAction)tapButton:(id)sender
 {
-    [self.test logName:@"jfl"];
+//    [self.test logName:@"jfl"];
 //    [self.testSuper logName:@"jfl"];
-//    [self.testBase logName:@"jfl"];
+    [self.testBase logName:@"jfl"];
 }
 
 #pragma mark - Accessor

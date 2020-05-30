@@ -10,8 +10,8 @@
 
 @implementation TestSuper
 
-- (void)logName:(NSString *)name {
-    NSLog(@"super_origin_(%@) %@", NSStringFromSelector(_cmd), name);
-}
+//- (void)logName:(NSString *)name {
+//    NSLog(@"super_origin_(%@) %@", NSStringFromSelector(_cmd), name);
+//}
 
 @end

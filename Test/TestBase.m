@@ -10,8 +10,8 @@
 
 @implementation TestBase
 
-- (void)logName:(NSString *)name {
-    NSLog(@"base_origin_(%@) %@", NSStringFromSelector(_cmd), name);
-}
+//- (void)logName:(NSString *)name {
+//    NSLog(@"base_origin_(%@) %@", NSStringFromSelector(_cmd), name);
+//}
 
 @end
