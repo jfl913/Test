@@ -42,13 +42,14 @@
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGFloat TopBarHeight = 44.0;
+    // sectionHeader 悬浮离顶部的距离。
+    CGFloat pinTop = 44.0;
     CGFloat offsetY = scrollView.contentOffset.y;
     CGFloat tableHeaderViewHeight = CGRectGetHeight(self.tableView.tableHeaderView.bounds);
     // 差值 = 头视图高度 - 导航条高度
-    if (offsetY >= tableHeaderViewHeight - TopBarHeight) {
+    if (offsetY >= tableHeaderViewHeight - pinTop) {
         // 顶部偏移距离：导航条高度
-        self.tableView.contentInset = UIEdgeInsetsMake(TopBarHeight, 0, 0, 0);
+        self.tableView.contentInset = UIEdgeInsetsMake(pinTop, 0, 0, 0);
     } else {
         self.tableView.contentInset = UIEdgeInsetsZero;
     }
